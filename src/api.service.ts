@@ -6,7 +6,7 @@ import {Environment, prod} from "./environments";
 @Injectable()
 export class ApiService {
     public environment: Environment = prod
-    private apiUrl = this.environment.apiUrl
+    private apiUrl = this.environment.apiUrl + '/api'
     public result: string | null = null
 
     constructor(private http: HttpClient) {
