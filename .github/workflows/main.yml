@@ -19,7 +19,7 @@ jobs:
         with:
           image   : jsr1der/first-angular-docker
           tags    : v1.0.0
-          file: ./Dockerfile
+          dockerfile: ./Dockerfile
           registry: docker.io
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
