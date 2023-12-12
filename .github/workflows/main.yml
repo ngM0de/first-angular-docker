@@ -15,7 +15,7 @@ jobs:
     steps  :
       - uses: actions/checkout@v2
       - name: Run script file
-        run: pwd
+        run: pwd && ls
         shell: bash
        
       - uses: mr-smithers-excellent/docker-build-push@v6
