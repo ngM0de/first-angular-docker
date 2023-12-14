@@ -13,7 +13,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps  :
-
+      - uses: actions/checkout@v2
+      - name: Run script file
+        run: pwd && ls
+        shell: bash
+       
       - uses: mr-smithers-excellent/docker-build-push@v6
         name: Build and push docker image
         with:
