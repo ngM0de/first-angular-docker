@@ -5,10 +5,10 @@ export interface Environment {
 
 export const dev: Environment = {
     production: false,
-    apiUrl: 'http://localhost:3000'
+    apiUrl: 'http://localhost:3000/api'
 }
 
 export const prod: Environment = {
     production: true,
-    apiUrl: 'https://express-playground-docker.onrender.com'
+    apiUrl: 'https://express-playground-docker.onrender.com/api'
 }

@@ -1,0 +1,7 @@
+.grid {
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 24px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
