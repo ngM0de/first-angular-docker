@@ -1,12 +1,12 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {BehaviorSubject, Observable, tap} from "rxjs";
-import {Environment} from "./environments";
+import {Environment, prod} from "./environments";
 import {UserCheckModel} from "./models/api.model";
 
 @Injectable()
 export class ApiService {
-    public environment: Environment;
+    public environment: Environment = prod;
     public readonly apiUrl$ = new BehaviorSubject<string | null>(null)
 
     get apiUrl() {
