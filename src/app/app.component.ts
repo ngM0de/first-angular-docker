@@ -21,8 +21,9 @@ export class AppComponent {
             Object.freeze(this.apiService.environment)
             console.log(`inside isDevMode`)
             console.log(this.apiService.environment)
-            this.apiService.apiUrl$.next(this.apiService.environment.apiEndpoint)
         }
+        this.apiService.apiUrl$.next(this.apiService.environment.apiEndpoint)
+
     }
 
 }
