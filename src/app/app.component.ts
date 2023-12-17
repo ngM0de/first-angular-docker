@@ -3,7 +3,7 @@ import {CommonModule} from '@angular/common';
 import {RouterOutlet} from '@angular/router';
 import {HttpClientModule} from "@angular/common/http";
 import {ApiService} from "../api.service";
-import {dev} from "../environments";
+import {environment} from "../environments/environments";
 import {UserCardComponent} from "./features/user-card/user-card.component";
 
 @Component({
@@ -17,9 +17,11 @@ import {UserCardComponent} from "./features/user-card/user-card.component";
 export class AppComponent {
     constructor(public apiService: ApiService) {
         if (isDevMode()) {
-            this.apiService.environment = dev;
+            this.apiService.environment = environment;
             Object.freeze(this.apiService.environment)
-            this.apiService.apiUrl$.next(this.apiService.environment.apiUrl)
+            console.log(`inside isDevMode`)
+            console.log(this.apiService.environment)
+            this.apiService.apiUrl$.next(this.apiService.environment.apiEndpoint)
         }
     }
 

@@ -2,11 +2,13 @@
     <h2>{{ userCheck.message }}</h2>
     <button (click)="logOut()">Logout</button>
 </section>
-<ng-template #userDefined>
-    <h2>{{ userCheck.message }}</h2>
-</ng-template>
+
+<!--<ng-template #userDefined>-->
+<!--    <h2>{{ userCheck.message }}</h2>-->
+<!--</ng-template>-->
+
 <ng-template #userUndefined>
-    <h2>{{ userCheck.message }}</h2>
+    <h2>{{ userCheck?.message }}</h2>
     <label>Name: </label>
     <input [formControl]="nameControl" type="text">
     <button [disabled]="nameControl.invalid" (click)="sendName()">Send</button>

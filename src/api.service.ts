@@ -1,12 +1,13 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {BehaviorSubject, Observable, tap} from "rxjs";
-import {Environment, prod} from "./environments";
 import {UserCheckModel} from "./models/api.model";
+import {Environment} from "./environments/environment.model";
+import {environment} from "./environments/ebvironment.prod";
 
 @Injectable()
 export class ApiService {
-    public environment: Environment = prod;
+    public environment: Environment = environment;
     public readonly apiUrl$ = new BehaviorSubject<string | null>(null)
 
     get apiUrl() {
@@ -26,7 +27,7 @@ export class ApiService {
         return this.http.get<UserCheckModel>(this.apiUrl + '/check-user')
     }
 
-    public registerNewUser(name: string ): Observable<UserCheckModel> {
-        return this.http.post<UserCheckModel>(this.apiUrl + '/register-user',{name})
+    public registerNewUser(name: string): Observable<UserCheckModel> {
+        return this.http.post<UserCheckModel>(this.apiUrl + '/register-user', {name})
     }
 }
